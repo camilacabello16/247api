@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MISA.Common.Models
+namespace API.Common.Models
 {
     /// <summary>
     /// Kết quả service trả về

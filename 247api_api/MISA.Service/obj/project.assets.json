@@ -318,30 +318,30 @@
           }
         }
       },
-      "MISA.Common/1.0.0": {
+      "API.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/MISA.Common.dll": {}
+          "bin/placeholder/API.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MISA.Common.dll": {}
+          "bin/placeholder/API.Common.dll": {}
         }
       },
-      "MISA.DataLayer/1.0.0": {
+      "API.DataLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "API.Common": "1.0.0",
           "Dapper": "2.0.78",
-          "MISA.Common": "1.0.0",
           "MySql.Data": "8.0.23",
           "MySqlConnector": "1.2.1"
         },
         "compile": {
-          "bin/placeholder/MISA.DataLayer.dll": {}
+          "bin/placeholder/API.DataLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MISA.DataLayer.dll": {}
+          "bin/placeholder/API.DataLayer.dll": {}
         }
       }
     }
@@ -1044,37 +1044,37 @@
         "version.txt"
       ]
     },
-    "MISA.Common/1.0.0": {
+    "API.Common/1.0.0": {
       "type": "project",
-      "path": "../MISA.Common/MISA.Common.csproj",
-      "msbuildProject": "../MISA.Common/MISA.Common.csproj"
+      "path": "../MISA.Common/API.Common.csproj",
+      "msbuildProject": "../MISA.Common/API.Common.csproj"
     },
-    "MISA.DataLayer/1.0.0": {
+    "API.DataLayer/1.0.0": {
       "type": "project",
-      "path": "../MISA.CukCuk.DataLayer/MISA.DataLayer.csproj",
-      "msbuildProject": "../MISA.CukCuk.DataLayer/MISA.DataLayer.csproj"
+      "path": "../MISA.CukCuk.DataLayer/API.DataLayer.csproj",
+      "msbuildProject": "../MISA.CukCuk.DataLayer/API.DataLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "MISA.Common >= 1.0.0",
-      "MISA.DataLayer >= 1.0.0"
+      "API.Common >= 1.0.0",
+      "API.DataLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Service\\MISA.Service.csproj",
-      "projectName": "MISA.Service",
-      "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Service\\MISA.Service.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Service\\obj\\",
+      "projectUniqueName": "H:\\247api\\247api\\247api_api\\MISA.Service\\API.Service.csproj",
+      "projectName": "API.Service",
+      "projectPath": "H:\\247api\\247api\\247api_api\\MISA.Service\\API.Service.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "H:\\247api\\247api\\247api_api\\MISA.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1088,11 +1088,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj": {
-              "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj"
+            "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj": {
+              "projectPath": "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj"
             },
-            "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj": {
-              "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj"
+            "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\API.DataLayer.csproj": {
+              "projectPath": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\API.DataLayer.csproj"
             }
           }
         }
@@ -1121,7 +1121,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

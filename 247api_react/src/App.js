@@ -1,14 +1,10 @@
 import './App.css';
-import Menu from '../src/components/sections/Menu'
-import ContentFooter from './components/molecules/ContentFooter';
-import StartPage from './components/pages/StartPage';
+import './components/pages/LayoutPage';
+import LayoutPage from './components/pages/LayoutPage';
 
 function App() {
     return (
-        <div className="App">
-            <Menu />
-            <StartPage />
-        </div>
+        <LayoutPage />
     );
 }
 

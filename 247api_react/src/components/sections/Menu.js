@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import '../../assets/styles/sections/menu.css';
 import logo from '../../assets/images/247logo.png';
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import axios from 'axios';
 
-function Menu() {
+function Menu(props) {
+    const [menuLists, setMenuLists] = useState([]);
+
+    useEffect(() => {
+        axios.get('https://localhost:44344/api/v1/Article')
+            .then((response) => {
+                setMenuLists(response.data);
+            });
+    });
+
+    const renderMenu = menuLists.map((menu, index) => {
+        return (
+            <div className="menu-item" id={"menu_item_" + index} key={index} onClick={() => handleOpenArticle(index)}>
+                <Link>{menu.ArticleName}</Link>
+            </div>
+        );
+    });
+
+    function handleOpenArticle(index) {
+        props.handleOpenArticle(menuLists[index]);
+        var selectMenu = document.getElementById("menu_item_" + index);
+        var startMenu = document.getElementById("menu_start");
+        startMenu.classList.remove('menu-active');
+        for (let i = 0; i < menuLists.length; i++) {
+            let menu = document.getElementById("menu_item_" + i);
+            menu.classList.remove('menu-active');
+        }
+        selectMenu.classList.add('menu-active');
+    }
+
+    function handlecClickMenu() {
+        var startMenu = document.getElementById("menu_start");
+        for (let i = 0; i < menuLists.length; i++) {
+            let menu = document.getElementById("menu_item_" + i);
+            menu.classList.remove('menu-active');
+        }
+        startMenu.classList.add('menu-active');
+    }
+
     return (
         <div className="wrap-menu">
             <div className="menu-header">
@@ -21,21 +60,14 @@ function Menu() {
             <div className="menu-content">
                 <div className="fix-menu-item">
                     <Router>
-                        <div className="menu-item menu-active">
-                            <Link >Getting Start</Link>
+                        <div
+                            className="menu-item menu-active"
+                            id="menu_start"
+                            onClick={handlecClickMenu}
+                        >
+                            <Link>Getting Start</Link>
                         </div>
-                        <div className="menu-item">
-                            <Link >Change Log</Link>
-                        </div>
-                        <div className="menu-item">
-                            <Link >Support</Link>
-                        </div>
-                        <div className="menu-item">
-                            <Link >About 247Express</Link>
-                        </div>
-                        <div className="menu-item">
-                            <Link >247Express API NPM Package</Link>
-                        </div>
+                        {renderMenu}
                     </Router>
                 </div>
             </div>

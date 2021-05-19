@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MISA.CukCuk.Api.Controllers
+namespace API.Controller.Controllers
 {
     [ApiController]
     [Route("[controller]")]

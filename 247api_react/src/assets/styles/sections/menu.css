@@ -1,8 +1,9 @@
-.wrap-menu{
-    width: 380px;
+.wrap-menu {
+    width: 300px;
     height: 100vh;
     background: #F5F7F9;
     padding-left: 16px;
+    position: fixed;
 }
 .logo-image img {
     width: 100%;

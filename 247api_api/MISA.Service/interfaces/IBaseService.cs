@@ -1,9 +1,9 @@
-﻿using MISA.Common.Models;
+﻿using API.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MISA.Service.interfaces
+namespace API.Service.interfaces
 {
     public interface IBaseService<T>
     {

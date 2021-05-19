@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj": {}
+    "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj": {}
   },
   "projects": {
-    "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj": {
+    "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj",
-        "projectName": "MISA.Common",
-        "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\obj\\",
+        "projectUniqueName": "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj",
+        "projectName": "API.Common",
+        "projectPath": "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "H:\\247api\\247api\\247api_api\\MISA.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,21 +54,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj": {
+    "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj",
+        "projectUniqueName": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj",
         "projectName": "MISA.DataLayer",
-        "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\obj\\",
+        "projectPath": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +82,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj": {
-                "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj"
+              "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj": {
+                "projectPath": "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj"
               }
             }
           }
@@ -126,7 +126,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

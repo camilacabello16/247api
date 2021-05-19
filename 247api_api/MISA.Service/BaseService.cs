@@ -1,12 +1,12 @@
-﻿using MISA.Common.Models;
-using MISA.DataLayer;
-using MISA.DataLayer.interfaces;
-using MISA.Service.interfaces;
+﻿using API.Common.Models;
+using API.DataLayer;
+using API.DataLayer.interfaces;
+using API.Service.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MISA.Service
+namespace API.Service
 {
     public class BaseService<T> : IBaseService<T>
     {

@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using MISA.Common.Models;
-using MISA.DataLayer.interfaces;
+using API.Common.Models;
+using API.DataLayer.interfaces;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace MISA.DataLayer
+namespace API.DataLayer
 {
     public class DbContext<T> : IDbContext<T>
     {

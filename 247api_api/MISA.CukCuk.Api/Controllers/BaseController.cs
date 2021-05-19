@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MISA.Service;
-using MISA.Service.interfaces;
+using API.Service;
+using API.Service.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MISA.CukCuk.Api.Controllers
+namespace API.Controller.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

@@ -318,14 +318,14 @@
           }
         }
       },
-      "MISA.Common/1.0.0": {
+      "API.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/MISA.Common.dll": {}
+          "bin/placeholder/API.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MISA.Common.dll": {}
+          "bin/placeholder/API.Common.dll": {}
         }
       }
     }
@@ -1028,34 +1028,34 @@
         "version.txt"
       ]
     },
-    "MISA.Common/1.0.0": {
+    "API.Common/1.0.0": {
       "type": "project",
-      "path": "../MISA.Common/MISA.Common.csproj",
-      "msbuildProject": "../MISA.Common/MISA.Common.csproj"
+      "path": "../MISA.Common/API.Common.csproj",
+      "msbuildProject": "../MISA.Common/API.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "API.Common >= 1.0.0",
       "Dapper >= 2.0.78",
-      "MISA.Common >= 1.0.0",
       "MySql.Data >= 8.0.23",
       "MySqlConnector >= 1.2.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj",
-      "projectName": "MISA.DataLayer",
-      "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\MISA.DataLayer.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.CukCuk.DataLayer\\obj\\",
+      "projectUniqueName": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\API.DataLayer.csproj",
+      "projectName": "API.DataLayer",
+      "projectPath": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\API.DataLayer.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "H:\\247api\\247api\\247api_api\\MISA.CukCuk.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1069,8 +1069,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj": {
-              "projectPath": "E:\\247API\\247api_api\\Base_Api-asp.net-core-\\MISA.Common\\MISA.Common.csproj"
+            "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj": {
+              "projectPath": "H:\\247api\\247api\\247api_api\\MISA.Common\\API.Common.csproj"
             }
           }
         }
@@ -1113,7 +1113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

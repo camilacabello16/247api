@@ -2,10 +2,11 @@
   display: flex;
 }
 
-.page-content{
-  padding: 0 65px;
-  padding-left: 65px;
-  padding-right: 250px;
+.page-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-left: 350px;
 }
 
 .App-logo {

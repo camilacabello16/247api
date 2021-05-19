@@ -9,18 +9,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using MISA.Common.Models;
-using MISA.DataLayer;
-using MISA.DataLayer.interfaces;
-using MISA.Service;
-using MISA.Service.interfaces;
+using API.Common.Models;
+using API.DataLayer;
+using API.DataLayer.interfaces;
+using API.Service;
+using API.Service.interfaces;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.DataLayer.DL;
 
-namespace MISA.CukCuk.Api
+namespace API.Controller
 {
     public class Startup
     {
@@ -49,6 +50,8 @@ namespace MISA.CukCuk.Api
 
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IDbContext<>), typeof(DbContext<>));
+            services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IRequestRepository, RequestRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

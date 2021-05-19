@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace MISA.DataLayer.interfaces
+namespace API.DataLayer.interfaces
 {
     public interface IDbContext<T>
     {
