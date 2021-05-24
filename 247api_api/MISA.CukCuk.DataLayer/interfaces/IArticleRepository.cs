@@ -7,6 +7,7 @@ namespace API.DataLayer.interfaces
 {
     public interface IArticleRepository : IDbContext<article>
     {
-        public IEnumerable<article> GetArticleById(Guid articleId);
+        IEnumerable<article> GetArticleById(Guid articleId);
+        IEnumerable<article> GetArticleByCategoryID(Guid categoryID);
     }
 }

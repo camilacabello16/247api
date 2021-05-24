@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../assets/styles/article-created.css';
+import '../../assets/styles/article-created.css';
 import { Input, Select, Button } from 'antd';
 import 'antd/dist/antd.css';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';

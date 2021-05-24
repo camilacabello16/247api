@@ -8,5 +8,6 @@ namespace API.Common.Models
     {
         public article articleApi { get; set; }
         public List<request> requestApi { get; set; }
+        public List<response> responseApi { get; set; }
     }
 }

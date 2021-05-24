@@ -126,6 +126,29 @@ namespace API.DataLayer
             return res;
         }
 
+        public int Update(T entity)
+        {
+            string className = typeof(T).Name;
+            var properties = typeof(T).GetProperties();
+            var parameters = new DynamicParameters();
+            var sqlBuilder = string.Empty;
+            var sqlParamBuilder = string.Empty;
+            foreach (var property in properties)
+            {
+                var propertyName = property.Name;
+                var propertyValue = property.GetValue(entity);
+                parameters.Add($"@{propertyName}", propertyValue);
+                sqlBuilder += $",{propertyName} = @{propertyName}";
+            }
+            sqlBuilder = sqlBuilder.Substring(1);
+            int position = sqlBuilder.IndexOf(",");
+            var sqlCompare = sqlBuilder.Substring(0, position);
+            sqlBuilder = sqlBuilder.Substring(position + 1);
+            var sql = $"UPDATE {className} SET {sqlBuilder} WHERE {sqlCompare}";
+            var effectRows = _dbConnection.Execute(sql, parameters);
+            return effectRows;
+        }
+
         /// <summary>
         /// Thực hiện xóa dữ liệu
         /// </summary>
@@ -135,7 +158,7 @@ namespace API.DataLayer
         public int DeleteData(Guid id)
         {
             var className = typeof(T).Name;
-            var res = _dbConnection.Execute($"Proc_Delete{className}", new { id = id.ToString() }, commandType: CommandType.StoredProcedure);
+            var res = _dbConnection.Execute($"DELETE FROM {className} WHERE {char.ToUpper(className[0]) + className.Substring(1)}ID = @id", new { id = id.ToString() }, commandType: CommandType.Text);
             return res;
         }
 

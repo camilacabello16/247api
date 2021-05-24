@@ -1,15 +1,11 @@
 import './App.css';
-import Menu from './components/Menu';
-import ArticleCreated2 from './components/ArticleCreated2';
+import Menu from './components/section/Menu';
+import ArticleCreated2 from './components/section/ArticleCreated2';
+import LayoutPage from './components/pages/LayoutPage';
 
 function App() {
     return (
-        <div className="page-container">
-            <Menu />
-            <div className="content-page">
-                <ArticleCreated2 />
-            </div>
-        </div>
+        <LayoutPage />
     );
 }
 

@@ -70,3 +70,7 @@
 .menu-active a{
     color:rgb(247, 125, 5)!important;
 }
+.category-name{
+    color: #9DAAB6;
+    padding: 5px 16px;
+}

@@ -13,7 +13,7 @@ namespace API.Controller.Controllers
     [ApiController]
     public class BaseController<T> : ControllerBase
     {
-        #region DECLAE}RE
+        #region DECLARE
         IBaseService<T> _baseService;
         #endregion
 
@@ -112,7 +112,7 @@ namespace API.Controller.Controllers
         [HttpPut]
         public IActionResult Put(T entity)
         {
-            var res = _baseService.UpdateData(entity);
+            var res = _baseService.Update(entity);
             if (res.Success == false)
             {
                 return StatusCode(400, res.Data);

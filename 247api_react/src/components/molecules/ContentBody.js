@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import { Tabs } from 'antd';
 import '../../assets/styles/molecules/content-body.css';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CopyOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -23,26 +21,36 @@ ContentBody.defaultProps = {
 }
 
 function ContentBody(props) {
-    useEffect(() => {
-        console.log(props.articleInfo.ApiExample);
-    });
 
     const codeString = JSON.stringify({ OrderCode: "123456789", Code: "123" }, null, 4);
 
     const [requests, setRequests] = useState([]);
 
+    const [responses, setReponses] = useState([]);
+
     useEffect(() => {
         axios.get('https://localhost:44344/api/v1/request/' + props.articleInfo.ArticleID)
             .then((response) => {
                 if (response.data == "") {
-                    console.log(1);
                     setRequests([]);
                 }
                 else {
                     setRequests(response.data);
                 }
             });
-    });
+    }, [props.articleInfo.ArticleID]);
+
+    useEffect(() => {
+        axios.get('https://localhost:44344/api/Response/' + props.articleInfo.ArticleID)
+            .then((response) => {
+                if (response.data == "") {
+                    setReponses([]);
+                }
+                else {
+                    setReponses(response.data);
+                }
+            });
+    }, [props.articleInfo.ArticleID]);
 
     const renderRequest = requests.map((req, index) => {
         return (
@@ -77,20 +85,53 @@ function ContentBody(props) {
         );
     });
 
+    const renderResponse = responses.map((resp, index) => {
+        return (
+            <div className="wrap-resp-body" key={index}>
+                <div className="resp-code">
+                    <div className="resp-code-circle"></div>
+                    {resp.ResponseCode == 0 &&
+                        <div className="resp-code-number">200: OK</div>
+                    }
+                    {resp.ResponseCode == 1 &&
+                        <div className="resp-code-number">404: Not Found</div>
+                    }
+                    {resp.ResponseCode == 2 &&
+                        <div className="resp-code-number">400: Bad Request</div>
+                    }
+                    {resp.ResponseCode == 3 &&
+                        <div className="resp-code-number">302: Found</div>
+                    }
+                </div>
+                <div>
+                    {resp.ResponseDescription}
+                </div>
+                <div className="example-json">
+                    <div className="copy-icon">
+                        <CopyOutlined />
+                    </div>
+                    {resp.ResponseContent &&
+                        <JSONPretty json={resp.ResponseContent} />
+                    }
+                </div>
+            </div>
+        );
+    })
+
     return (
         <div className="body-page">
             <div className="body-page-name">
                 {props.articleInfo.ApiType == 0 &&
-                    <div className="api-type">GET</div>
+                    <div className="api-type" style={{ backgroundColor: '#3884FF' }}>GET</div>
                 }
                 {props.articleInfo.ApiType == 1 &&
                     <div className="api-type">POST</div>
                 }
                 {props.articleInfo.ApiType == 2 &&
-                    <div className="api-type">PUT</div>
+                    <div className="api-type" style={{ backgroundColor: '#F77D05' }}>PUT</div>
                 }
                 {props.articleInfo.ApiType == 3 &&
-                    <div className="api-type">DELETE</div>
+                    <div className="api-type" style={{ backgroundColor: '#FF4642' }}>DELETE</div>
                 }
                 <div className="api-name">{props.articleInfo.ApiName}</div>
             </div>
@@ -110,20 +151,7 @@ function ContentBody(props) {
                         </div>
                     </TabPane>
                     <TabPane tab="Response" key="2">
-                        <div className="wrap-resp-body">
-                            <div className="resp-code">
-                                <div className="resp-code-circle"></div>
-                                <div className="resp-code-number">200: OK</div>
-                            </div>
-                            <div className="example-json">
-                                <div className="copy-icon">
-                                    <CopyOutlined />
-                                </div>
-                                {props.articleInfo.ApiResponse &&
-                                    <JSONPretty json={(props.articleInfo.ApiResponse)} />
-                                }
-                            </div>
-                        </div>
+                        {renderResponse}
                     </TabPane>
                 </Tabs>
             </div>

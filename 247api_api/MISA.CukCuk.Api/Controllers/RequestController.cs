@@ -37,5 +37,25 @@ namespace API.Controller.Controllers
                 return StatusCode(200, res);
             }
         }
+
+        [HttpDelete("delete-request/{id}")]
+        public IActionResult DeleteRequest(Guid id)
+        {
+            if(_requestRepository.FindRequestByID(id.ToString()) == true)
+            {
+                var res = _requestRepository.DeleteData(id);
+                if (res > 0)
+                {
+                    return StatusCode(201, res);
+                }
+                else
+                {
+                    return StatusCode(200, res);
+                }
+            } else
+            {
+                return null;
+            }
+        }
     }
 }

@@ -107,6 +107,30 @@ namespace API.Service
             return serviceResult;
         }
 
+        public ServiceResult Update(T entity)
+        {
+            var serviceResult = new ServiceResult();
+            var errorMsg = new ErrorMsg();
+
+            // Validate dữ liệu
+            var isValid = true;
+
+            // validate sai thì ko cho thêm
+            if (isValid == false)
+            {
+                serviceResult.Success = false;
+                serviceResult.Data = errorMsg;
+            }
+
+            // validate đúng => thực hiện thêm mới
+            else
+            {
+                serviceResult.Success = true;
+                serviceResult.Data = _dbContext.Update(entity);
+            }
+            return serviceResult;
+        }
+
         /// <summary>
         /// Validate dữ liệu
         /// </summary>

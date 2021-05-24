@@ -79,5 +79,7 @@ namespace API.DataLayer.interfaces
         /// <returns>Danh sách dữ liệu bằng từ khóa tìm kiếm</returns>
         /// CreatedBy: BDHIEU (19/02/2021)
         IEnumerable<T> GetDataBySearchText(string searchText);
+
+        int Update(T entity);
     }
 }

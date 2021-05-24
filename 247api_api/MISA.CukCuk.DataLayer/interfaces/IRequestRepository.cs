@@ -7,6 +7,8 @@ namespace API.DataLayer.interfaces
 {
     public interface IRequestRepository : IDbContext<request>
     {
-        public IEnumerable<request> GetRequestByArticle(Guid articleId);
+        IEnumerable<request> GetRequestByArticle(Guid articleId);
+        int DeleteRequestByArticleID(Guid id);
+        bool FindRequestByID(string requestID);
     }
 }

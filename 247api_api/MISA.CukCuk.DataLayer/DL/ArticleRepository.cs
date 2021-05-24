@@ -15,5 +15,11 @@ namespace API.DataLayer.DL
             var data = _dbConnection.Query<article>($"SELECT * FROM article WHERE ArticleID = '{articleId}'", commandType: CommandType.Text);
             return data;
         }
+
+        public IEnumerable<article> GetArticleByCategoryID(Guid categoryID)
+        {
+            var data = _dbConnection.Query<article>($"SELECT * FROM article WHERE CategoryID = '{categoryID}'", commandType: CommandType.Text);
+            return data;
+        }
     }
 }

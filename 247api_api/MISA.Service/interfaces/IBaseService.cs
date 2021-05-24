@@ -28,6 +28,7 @@ namespace API.Service.interfaces
         /// <returns>Service Result</returns>
         /// CreatedBy: BDHIEU (10/02/2021)
         ServiceResult UpdateData(T entity);
+        ServiceResult Update(T entity);
 
         /// <summary>
         /// Xóa dữ liệu

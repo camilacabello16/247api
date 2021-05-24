@@ -52,6 +52,7 @@ namespace API.Controller
             services.AddScoped(typeof(IDbContext<>), typeof(DbContext<>));
             services.AddScoped<IArticleRepository, ArticleRepository>();
             services.AddScoped<IRequestRepository, RequestRepository>();
+            services.AddScoped<IResponseRepository, ResponseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
