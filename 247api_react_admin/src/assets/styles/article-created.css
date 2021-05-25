@@ -195,3 +195,12 @@
 .req-name-txt .ant-row.ant-form-item.ant-form-item-has-success {
     margin-bottom: 0!important;
 }
+.req-kind{
+    width: 25%;
+}
+.req-kind-txt{
+    background-color: #F5F7F9;
+    width: 180px;
+    text-align: center;
+    border-radius: 4px;
+}

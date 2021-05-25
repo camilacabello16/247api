@@ -29,12 +29,18 @@ function ArticleCreated2(props) {
         if (values.ApiType == null) {
             values.ApiType = 0;
         }
+        if (values.responseApi == null) {
+            values.responseApi = [];
+        }
         for (let i = 0; i < values.requestApi.length; i++) {
             if (values.requestApi[i].RequestType == null) {
                 values.requestApi[i].RequestType = 0;
             }
             if (values.requestApi[i].IsOptional == null) {
                 values.requestApi[i].IsOptional = 0;
+            }
+            if (values.requestApi[i].RequestKindID == null) {
+                values.requestApi[i].RequestKindID = 5;
             }
         }
         for (let i = 0; i < values.responseApi.length; i++) {
@@ -160,6 +166,8 @@ function ArticleCreated2(props) {
                                                                         <Option value="1">array</Option>
                                                                         <Option value="2">number</Option>
                                                                         <Option value="3">integer</Option>
+                                                                        <Option value="4">object</Option>
+                                                                        <Option value="5">boolean</Option>
                                                                     </Select>
                                                                 </Form.Item>
                                                             </div>
@@ -175,6 +183,21 @@ function ArticleCreated2(props) {
                                                                         boxShadow: 'none',
                                                                         fontSize: 16
                                                                     }} />
+                                                                </Form.Item>
+                                                            </div>
+                                                        </div>
+                                                        <div className="req-kind">
+                                                            <div className="req-kind-txt">
+                                                                <Form.Item
+                                                                    name={[name, 'RequestKindID']}
+                                                                >
+                                                                    <Select defaultValue="5">
+                                                                        <Option value="1">Path Parameters</Option>
+                                                                        <Option value="2">Headers</Option>
+                                                                        <Option value="3">Query Parameters</Option>
+                                                                        <Option value="4">Form Data Parameters</Option>
+                                                                        <Option value="5">Body Parameters</Option>
+                                                                    </Select>
                                                                 </Form.Item>
                                                             </div>
                                                         </div>

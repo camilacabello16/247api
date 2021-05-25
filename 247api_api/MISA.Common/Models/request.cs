@@ -12,5 +12,6 @@ namespace API.Common.Models
         public int RequestType { get; set; }
         public string RequestDescription { get; set; }
         public int IsOptional { get; set; }
+        public int RequestKindID { get; set; }
     }
 }
