@@ -34,7 +34,7 @@ function Menu(props) {
     const renderCategory = categoryList.map((categoryItem, index) => {
         return (
             <div key={index} className="wrap-category">
-                <div style={{marginBottom: 20}}>
+                <div style={{ marginBottom: 20 }}>
                     <div className="category-name">{categoryItem.CategoryName}</div>
                     <div className="link-list">
                         {menuLists.map((menu, index) => {
@@ -75,6 +75,10 @@ function Menu(props) {
         startMenu.classList.add('menu-active');
     }
 
+    function handleOpenSearchBox() {
+        props.handleOpenSearchBox();
+    }
+
     return (
         <div className="wrap-menu">
             <div className="menu-header">
@@ -84,7 +88,7 @@ function Menu(props) {
                     </div>
                     <div className="page-name">247API</div>
                 </div>
-                <div className="wrap-search">
+                <div className="wrap-search" onClick={handleOpenSearchBox}>
                     <SearchOutlined />
                 </div>
             </div>

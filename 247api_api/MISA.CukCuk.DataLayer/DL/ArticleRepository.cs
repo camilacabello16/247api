@@ -21,5 +21,11 @@ namespace API.DataLayer.DL
             var data = _dbConnection.Query<article>($"SELECT * FROM article WHERE CategoryID = '{categoryID}'", commandType: CommandType.Text);
             return data;
         }
+
+        public IEnumerable<article> GetArticleBySearchText(string searchText)
+        {
+            var data = _dbConnection.Query<article>($"SELECT * FROM article WHERE ArticleName LIKE CONCAT('%','{searchText}','%')", commandType: CommandType.Text);
+            return data;
+        }
     }
 }

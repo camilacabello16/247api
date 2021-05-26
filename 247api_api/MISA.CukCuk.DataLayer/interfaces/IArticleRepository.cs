@@ -9,5 +9,6 @@ namespace API.DataLayer.interfaces
     {
         IEnumerable<article> GetArticleById(Guid articleId);
         IEnumerable<article> GetArticleByCategoryID(Guid categoryID);
+        IEnumerable<article> GetArticleBySearchText(string searchText);
     }
 }

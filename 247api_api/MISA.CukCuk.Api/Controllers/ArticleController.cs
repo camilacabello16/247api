@@ -136,5 +136,20 @@ namespace API.Controller.Controllers
             _articleRepository.Update(articleContent);
             return StatusCode(201, "Updated success");
         }
+
+        [HttpGet("search/{searchText}")]
+        public IActionResult GetArticleBySearchText(string searchText)
+        {
+            var res = _articleRepository.GetArticleBySearchText(searchText);
+            var data = res as List<article>;
+            if (data.Count == 0)
+            {
+                return StatusCode(204, res);
+            }
+            else
+            {
+                return StatusCode(200, res);
+            }
+        }
     }
 }

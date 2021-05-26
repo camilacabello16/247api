@@ -29,6 +29,7 @@
 }
 .wrap-search {
     margin-right: 20px;
+    cursor: pointer;
 }
 .gitbook-txt{
     font-size: 12px;
