@@ -29,8 +29,11 @@ function ArticleCreated2(props) {
         if (values.ApiType == null) {
             values.ApiType = 0;
         }
-        if (values.responseApi == null) {
+        if (values.responseApi == null || values.responseApi == "") {
             values.responseApi = [];
+        }
+        if (values.requestApi == null || values.requestApi == "") {
+            values.requestApi = [];
         }
         for (let i = 0; i < values.requestApi.length; i++) {
             if (values.requestApi[i].RequestType == null) {
@@ -60,7 +63,8 @@ function ArticleCreated2(props) {
         articleCreator["responseApi"] = values.responseApi;
         console.log(articleCreator);
         axios.post("https://localhost:44344/api/v1/Article/insert-article", articleCreator)
-            .then(resp => console.log(resp))
+            .then(resp => console.log(resp));
+        window.location.reload();
     };
 
     return (

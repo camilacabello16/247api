@@ -125,21 +125,32 @@ function ContentBody(props) {
         return (
             <div className="wrap-resp-body" key={index}>
                 <div className="resp-code">
-                    <div className="resp-code-circle"></div>
                     {resp.ResponseCode == 0 &&
-                        <div className="resp-code-number">200: OK</div>
+                        <>
+                            <div className="resp-code-circle"></div>
+                            <div className="resp-code-number">200: OK</div>
+                        </>
                     }
                     {resp.ResponseCode == 1 &&
-                        <div className="resp-code-number">404: Not Found</div>
+                        <>
+                            <div className="resp-code-circle" style={{ backgroundColor: '#FF4642' }}></div>
+                            <div className="resp-code-number">404: Not Found</div>
+                        </>
                     }
                     {resp.ResponseCode == 2 &&
-                        <div className="resp-code-number">400: Bad Request</div>
+                        <>
+                            <div className="resp-code-circle" style={{ backgroundColor: '#FF4642' }}></div>
+                            <div className="resp-code-number">400: Bad Request</div>
+                        </>
                     }
                     {resp.ResponseCode == 3 &&
-                        <div className="resp-code-number">302: Found</div>
+                        <>
+                            <div className="resp-code-circle" style={{ backgroundColor: '#FF9D3D' }}></div>
+                            <div className="resp-code-number">302: Found</div>
+                        </>
                     }
                 </div>
-                <div>
+                <div style={{ marginBottom: 10, fontFamily: 'Roboto-medium' }}>
                     {resp.ResponseDescription}
                 </div>
                 <div className="example-json">

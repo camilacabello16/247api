@@ -10,6 +10,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Menu(props) {
     const [menuLists, setMenuLists] = useState([]);
@@ -76,12 +77,14 @@ function Menu(props) {
     function handleOpenMoreFunction(index) {
         document.getElementById('more_function_' + index).classList.toggle('display-more');
         //setIsOpenMoreFunction(!isOpenMoreFunction);
-
     }
 
+    const history = useHistory();
+
     function handleDeleteArticle(articleId) {
-        console.log(articleId);
-        //axios.delete('https://localhost:44344//api/v1/Article/delete-article/' + articleId).then(resp => console.log(resp));
+        axios.delete('https://localhost:44344/api/v1/Article/delete-article/' + articleId).then(resp => console.log(resp));
+        history.push('/');
+        window.location.reload();
     }
 
     function handleOpenFormEdit(menu) {
@@ -106,6 +109,7 @@ function Menu(props) {
         for (let i = 0; i < requests.length; i++) {
             requests[i].RequestType = requests[i].RequestType.toString();
             requests[i].IsOptional = requests[i].IsOptional.toString();
+            requests[i].RequestKindID = requests[i].RequestKindID.toString();
         }
         for (let i = 0; i < responses.length; i++) {
             responses[i].ResponseCode = responses[i].ResponseCode.toString();
